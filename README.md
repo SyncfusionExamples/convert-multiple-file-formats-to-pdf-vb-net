@@ -1,4 +1,4 @@
-# convert-multiple-file-formats-to-pdf-vb-net
+# Convert Multiple File Formats to PDF with Headers and Watermarks in VB.NET
 This sample demonstrates how to convert various file formats to PDF, add header text to every PDF page, and apply a text watermark using VB.NET in a Windows desktop application.
 
 ## 1. Overview
