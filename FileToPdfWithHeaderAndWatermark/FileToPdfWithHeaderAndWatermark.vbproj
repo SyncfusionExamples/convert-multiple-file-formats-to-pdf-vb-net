@@ -1,47 +1,51 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0-windows</TargetFramework>
-    <UseWindowsForms>true</UseWindowsForms>
-    <RootNamespace>FileToPdfWithHeaderAndWatermark</RootNamespace>
-    <AssemblyName>FileToPdfWithHeaderAndWatermark</AssemblyName>
-    <StartupObject>FileToPdfWithHeaderAndWatermark.Program</StartupObject>
-    <OptionStrict>On</OptionStrict>
-    <OptionExplicit>On</OptionExplicit>
-    <OptionInfer>On</OptionInfer>
-    <MyType>WindowsFormsWithCustomSubMain</MyType>
-    <ApplicationManifest></ApplicationManifest>
-    <Platforms>AnyCPU;x64</Platforms>
-    <GenerateDocumentationFile>false</GenerateDocumentationFile>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net48</TargetFramework>
+		<UseWindowsForms>true</UseWindowsForms>
 
-  <PropertyGroup>
-    <SyncfusionVersion>35.1.41</SyncfusionVersion>
-  </PropertyGroup>
+		<RootNamespace>FileToPdfWithHeaderAndWatermark</RootNamespace>
+		<AssemblyName>FileToPdfWithHeaderAndWatermark</AssemblyName>
+		<StartupObject>FileToPdfWithHeaderAndWatermark.Program</StartupObject>
 
-  <ItemGroup>
-    <Import Include="System.Data" />
-    <Import Include="System.Drawing" />
-    <Import Include="System.Windows.Forms" />
-  </ItemGroup>
+		<OptionStrict>On</OptionStrict>
+		<OptionExplicit>On</OptionExplicit>
+		<OptionInfer>On</OptionInfer>
 
-  <ItemGroup>
-    <PackageReference Include="Syncfusion.Licensing" Version="$(SyncfusionVersion)" />
-    <PackageReference Include="Syncfusion.Pdf.WinForms" Version="$(SyncfusionVersion)" />
-    <PackageReference Include="Syncfusion.DocIO.WinForms" Version="$(SyncfusionVersion)" />
-    <PackageReference Include="Syncfusion.DocToPdfConverter.WinForms" Version="$(SyncfusionVersion)" />
-    <PackageReference Include="Syncfusion.XlsIO.WinForms" Version="$(SyncfusionVersion)" />
-    <PackageReference Include="Syncfusion.ExcelToPdfConverter.WinForms" Version="$(SyncfusionVersion)" />
-    <PackageReference Include="Syncfusion.Presentation.WinForms" Version="$(SyncfusionVersion)" />
-    <PackageReference Include="Syncfusion.PresentationToPdfConverter.WinForms" Version="$(SyncfusionVersion)" />
-    <PackageReference Include="Syncfusion.HtmlToPdfConverter.WinForms" Version="$(SyncfusionVersion)" />
-    <PackageReference Include="Syncfusion.Markdown" Version="$(SyncfusionVersion)" />
-  </ItemGroup>
+		<MyType>WindowsFormsWithCustomSubMain</MyType>
+		<Platforms>AnyCPU;x64</Platforms>
+		<GenerateDocumentationFile>false</GenerateDocumentationFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <!-- Sample files in the project's input folder are copied next to the executable and loaded at startup. -->
-    <None Include="input\**\*" CopyToOutputDirectory="PreserveNewest" LinkBase="input" />
-  </ItemGroup>
+	<PropertyGroup>
+		<SyncfusionVersion>35.1.41</SyncfusionVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Import Include="System.Data" />
+		<Import Include="System.Drawing" />
+		<Import Include="System.Windows.Forms" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+		<PackageReference Include="System.Net.Http" Version="4.3.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Syncfusion.Licensing" Version="$(SyncfusionVersion)" />
+		<PackageReference Include="Syncfusion.Pdf.WinForms" Version="$(SyncfusionVersion)" />
+		<PackageReference Include="Syncfusion.DocIO.WinForms" Version="$(SyncfusionVersion)" />
+		<PackageReference Include="Syncfusion.DocToPdfConverter.WinForms" Version="$(SyncfusionVersion)" />
+		<PackageReference Include="Syncfusion.XlsIO.WinForms" Version="$(SyncfusionVersion)" />
+		<PackageReference Include="Syncfusion.ExcelToPdfConverter.WinForms" Version="$(SyncfusionVersion)" />
+		<PackageReference Include="Syncfusion.Presentation.WinForms" Version="$(SyncfusionVersion)" />
+		<PackageReference Include="Syncfusion.PresentationToPdfConverter.WinForms" Version="$(SyncfusionVersion)" />
+		<PackageReference Include="Syncfusion.HtmlToPdfConverter.WinForms" Version="$(SyncfusionVersion)" />
+		<PackageReference Include="Syncfusion.Markdown" Version="$(SyncfusionVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="input\**\*" CopyToOutputDirectory="PreserveNewest" LinkBase="input" />
+	</ItemGroup>
 
 </Project>

@@ -28,11 +28,6 @@ Public Class DocumentConversionService
 
     Private ReadOnly _customizationService As PdfCustomizationService
 
-    Shared Sub New()
-        ' Legacy Office formats (.doc, .ppt, .xls) need code-page encodings that .NET does not register by default.
-        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
-    End Sub
-
     Public Sub New()
         Me.New(New PdfCustomizationService())
     End Sub
