@@ -28,16 +28,6 @@ Public Class DocumentConversionService
 
     Private ReadOnly _customizationService As PdfCustomizationService
 
-    Shared Sub New()
-
-#If Not NET48 Then
-        ' Required only for .NET Core/.NET 5+/NET 10 to support legacy Office formats
-        ' such as .doc, .ppt, and .xls that use code-page encodings.
-        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
-#End If
-
-    End Sub
-
     Public Sub New()
         Me.New(New PdfCustomizationService())
     End Sub
