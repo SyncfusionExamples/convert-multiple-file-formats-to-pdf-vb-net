@@ -23,18 +23,18 @@ A Windows Forms desktop sample, written entirely in VB.NET, that converts a batc
 ## 3. Prerequisites
 
 - Windows 10 or 11 (x64).
-- Visual Studio 2026 / 2022 17.14 or later (.NET 10 support) with the **.NET desktop development** workload, or the .NET 10 SDK or later for command-line builds.
+- Visual Studio 2022 with the .NET desktop development workload and the .NET Framework 4.8 Developer Pack/Targeting Pack installed.
 - A Syncfusion license key (a free Community License or a trial key works). Without one, the app still runs but the PDFs carry a Syncfusion trial banner.
 
 ## 4. Visual Studio and .NET version
 
 | Item             | Value                                              |
 |------------------|----------------------------------------------------|
-| Target framework | `net10.0-windows` (Windows Forms)                   |
+| Target framework |net48 (Windows Forms)                   |
 | Language         | VB.NET |
-| IDE              | Visual Studio with .NET 10 support (or `dotnet` CLI) |
+| IDE              | Visual Studio 2022 with .NET Framework 4.8 Developer Pack/Targeting Pack installed |
 
-The sample uses the Syncfusion `*.WinForms` packages listed on the [Syncfusion NuGet packages required](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/nuget-packages-required) page. Those packages ship a `net10.0-windows7.0` build (alongside `net462`, `net8.0-windows7.0` and `net9.0-windows7.0`).
+The sample uses the Syncfusion `*.WinForms` packages listed on the [Syncfusion NuGet packages required](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/nuget-packages-required) page. The project targets .NET Framework 4.8 (net48) and uses the corresponding assemblies provided by the referenced Syncfusion NuGet packages.
 
 ## 5. Syncfusion NuGet packages
 
@@ -78,12 +78,12 @@ dotnet run -c Release
 
 ## 8. Adding files
 
-**Default input files:** the [input](input) folder is copied next to the executable (`bin\Debug\net10.0-windows\input`) and every supported file in it is loaded into the list at startup. Put your own sample files there before building to change the defaults. You can add more files, or press **Clear Files** and add your own.
+**Default input files:** the [input](input) folder is copied next to the executable (`bin\Debug\net48\input`) and every supported file in it is loaded into the list at startup. Put your own sample files there before building to change the defaults. You can add more files, or press **Clear Files** and add your own.
 
 - **Drag and drop**: drag files from Explorer onto the drop panel (or the file list).
 - **Browse Files**: opens a multi-select file dialog filtered to all supported extensions.
 
-Both paths use the same code. Duplicate paths are ignored and unsupported extensions are reported in a message box. Pick an **Output Folder** (default: an `Output` folder next to the executable, for example `bin\Debug\net10.0-windows\Output`; it is created automatically if it does not exist), then press **Convert to PDF**. Each file shows its own status (Success or the failure reason) and the generated PDF path. If `Report.pdf` already exists, the new file is saved as `Report_1.pdf`, `Report_2.pdf` and so on. Existing PDFs are never overwritten. **Open Output Folder** shows the result in Explorer.
+Both paths use the same code. Duplicate paths are ignored and unsupported extensions are reported in a message box. Pick an **Output Folder** (default: an `Output` folder next to the executable, for example `bin\Debug\net48\Output`; it is created automatically if it does not exist), then press **Convert to PDF**. Each file shows its own status (Success or the failure reason) and the generated PDF path. If `Report.pdf` already exists, the new file is saved as `Report_1.pdf`, `Report_2.pdf` and so on. Existing PDFs are never overwritten. **Open Output Folder** shows the result in Explorer.
 
 ## 9. Header and watermark options
 
